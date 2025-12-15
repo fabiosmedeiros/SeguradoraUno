@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SeguradoraUno.Domain.Entities.PessoaContato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pessoa/Contatos</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>DDD</th>
+                <th>Telefone</th>
+                <th>Telefone principal ?</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Pessoa.Nome</td>
+                    <td>@item.Ddd</td>
+                    <td>@item.Telefone</td>
+                    <td>@(item.IsTelefonePrincipal ? "Sim" : "Não")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

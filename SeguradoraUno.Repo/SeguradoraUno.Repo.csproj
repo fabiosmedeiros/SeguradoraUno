@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,13 +48,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Repository\PessoaContatoRepository.cs" />
+    <Compile Include="Data\Repository\PessoaEnderecoRepository.cs" />
+    <Compile Include="Data\Repository\PessoaRepository.cs" />
+    <Compile Include="Data\Repository\Repository.cs" />
+    <Compile Include="Data\UoW\UnitOfWork.cs" />
+    <Compile Include="EntityConfiguration\PessoaConfig.cs" />
+    <Compile Include="EntityConfiguration\PessoaContatoConfig.cs" />
+    <Compile Include="EntityConfiguration\PessoaEnderecoConfig.cs" />
+    <Compile Include="Migrations\202512151646440_InitialModel.cs" />
+    <Compile Include="Migrations\202512151646440_InitialModel.Designer.cs">
+      <DependentUpon>202512151646440_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\SuDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Repository\" />
-    <Folder Include="Data\UoW\" />
-    <Folder Include="EntityConfiguration\" />
-    <Folder Include="Persistence\" />
+    <ProjectReference Include="..\SeguradoraUno.Domain\SeguradoraUno.Domain.csproj">
+      <Project>{2c3576b4-2444-42c1-a018-e9c09d95c81f}</Project>
+      <Name>SeguradoraUno.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202512151646440_InitialModel.resx">
+      <DependentUpon>202512151646440_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

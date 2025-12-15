@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\PessoaContato.cs" />
+    <Compile Include="Entities\PessoaEndereco.cs" />
+    <Compile Include="Entities\PessoaTipo.cs" />
+    <Compile Include="Interfaces\Repository\IPessoaContatoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPessoaEnderecoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPessoaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\UoW\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Interfaces\Repository\" />
-    <Folder Include="Interfaces\UoW\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
