@@ -7,11 +7,11 @@ namespace SeguradoraUno.Domain.Interfaces.UoW
     {
         #region "Repositories"
 
-        IPessoaRepository PessoaRepository { get; }
+        IPessoaRepository Pessoas { get; }
 
-        IPessoaEnderecoRepository PessoaEnderecoRepository { get; }
+        IPessoaEnderecoRepository PessoaEnderecos { get; }
 
-        IPessoaContatoRepository PessoaContatoRepository { get; }
+        IPessoaContatoRepository PessoaContatos { get; }
 
         #endregion
 

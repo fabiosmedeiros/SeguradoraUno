@@ -27,7 +27,7 @@ namespace SeguradoraUno.Web.Controllers
         // GET: Obtendo a lista de pessoas e contatos.
         public ActionResult Index()
         {
-            var pessoaContatosDomain = this._unitOfWork.PessoaContatoRepository.GetPessoaContatos();
+            var pessoaContatosDomain = this._unitOfWork.PessoaContatos.GetPessoaContatos();
 
             return View(pessoaContatosDomain);
         }

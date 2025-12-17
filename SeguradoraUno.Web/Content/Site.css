@@ -1,24 +1,139 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Definindo padding left e right, e sobrescrevendo o padding top e bottom. */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* Substitui o comportamento padrão do Bootstrap, onde as listas de descrição horizontais 
+    truncam os termos que são muito longos para caber na coluna da esquerda.
 */
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+/* Definindo a largura dos elementos de entrada do formulário, pois eles têm 100% de largura por padrão. */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Sobrescrevendo a cor de fundo da navbar, cor da fonte, retirando a borda padrão, entre outras coisas. */
+.navbar-inverse {
+    background-color: #dc0501 !important;
+    border: 0;
+}
+
+.navbar-default .navbar-text {
+    color: #fff !important;
+}
+
+.navbar-nav > li > a {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-nav > li > a:hover {
+    background-color: #ffff00 !important;
+    color: #000 !important;
+}
+
+.navbar-brand {
+    text-decoration: solid !important;
+    font-weight: bolder !important;
+    color: #fff !important;
+}
+
+.flex-container {
+    display: flex; /* Ativa o flexbox container. */
+    justify-content: space-around; /* Distribui o espaço uniformemente ao redor dos itens. */
+    flex-wrap: wrap; /* Permite que os itens sejam quebrados em uma nova linha em telas menores. */
+    padding-top: 5em;
+    grid-gap: 10px;
+}
+
+.box {
+    flex: 1; /* Permite que cada caixa cresça e diminua igualmente. */
+    min-width: 150px; /* Garante que as caixas tenham uma largura mínima antes de serem embaladas. */
+    margin: 10px; /* Adiciona espaços entre as caixas. */
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    box-sizing: border-box; /* Garante que o preenchimento/margem estejam incluídos na largura. */
+    border: solid 1px;
+}
+
+/* Opcional: Media query para telas pequenas, para empilhar as caixas em uma única coluna. */
+@media (max-width: 600px) {
+    .box {
+        flex: 100%; /* Faz com que cada caixa ocupe toda a largura. */
+    }
+}
+
+* {
+    box-sizing: border-box
+}
+
+/* Container do Slideshow */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Ocultando as imagens por padrão */
+.slides-carrosel {
+    display: none;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Efeito fade */
+.fade {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .6
+    }
+
+    to {
+        opacity: 10
+    }
+}
+
+.img-ico-index {
+    width: 110px;
+    height: 110px;
+}
+
+.btn-custom-red {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff;
+    font-weight: 800;
+}
+
+.btn-custom-red:hover,
+.btn-custom-red:focus,
+.btn-custom-red:active {
+    background-color: #ffff00;
+    border-color: #ffff00;
 }

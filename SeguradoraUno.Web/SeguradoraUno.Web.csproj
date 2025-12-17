@@ -193,6 +193,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\icon-acidentes-pessoais-1.png" />
+    <Content Include="Content\Images\icon-vida-1.png" />
+    <Content Include="Content\Images\icon-vida1-microsseguros.png" />
+    <Content Include="Content\Images\icon-vida1-pessoas.png" />
+    <Content Include="Content\Images\su-1.png" />
+    <Content Include="Content\Images\vida-1.png" />
+    <Content Include="Content\Images\vida-2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -210,6 +217,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\slideshow.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

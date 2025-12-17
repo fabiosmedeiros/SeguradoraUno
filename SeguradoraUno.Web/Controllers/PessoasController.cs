@@ -27,7 +27,7 @@ namespace SeguradoraUno.Web.Controllers
         // GET: Obtendo a lista de pessoas cadastradas.
         public ActionResult Index()
         {
-            var pessoasDomain = this._unitOfWork.PessoaRepository.GetAll();
+            var pessoasDomain = this._unitOfWork.Pessoas.GetAll();
 
             return View(pessoasDomain);
         }

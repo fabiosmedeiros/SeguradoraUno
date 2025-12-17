@@ -9,59 +9,76 @@ namespace SeguradoraUno.Repo.Data.UoW
     {
         #region "Attributes"
 
-        private readonly SuDbContext _dbContext = new SuDbContext();
+        private readonly SuDbContext _dbContext;
 
-        private bool isDisposed = false;
+        private bool isDisposed;
+
+        #endregion
+
+
+        #region "Constructor"
+
+        public UnitOfWork()
+        {
+            this._dbContext = new SuDbContext();
+            this.isDisposed = false;
+        }
 
         #endregion
 
 
         #region "Repositories"
 
-        private IPessoaRepository pessoaRepository;
+        private IPessoaRepository pessoas;
 
-        private IPessoaEnderecoRepository pessoaEnderecoRepository;
+        private IPessoaEnderecoRepository pessoaEnderecos;
 
-        private IPessoaContatoRepository pessoaContatoRepository;
+        private IPessoaContatoRepository pessoaContatos;
 
 
-        public IPessoaRepository PessoaRepository
+        public IPessoaRepository Pessoas
         {
             get
             {
-                if (this.pessoaRepository == null)
+                if (this.pessoas == null)
                 {
-                    this.pessoaRepository = new PessoaRepository(this._dbContext);
+                    this.pessoas = new PessoaRepository(this._dbContext);
                 }
 
-                return this.pessoaRepository;
+                return this.pessoas;
             }
+
+            private set { }
         }
 
-        public IPessoaEnderecoRepository PessoaEnderecoRepository
+        public IPessoaEnderecoRepository PessoaEnderecos
         {
             get
             {
-                if (this.pessoaEnderecoRepository == null)
+                if (this.pessoaEnderecos == null)
                 {
-                    this.pessoaEnderecoRepository = new PessoaEnderecoRepository(this._dbContext);
+                    this.pessoaEnderecos = new PessoaEnderecoRepository(this._dbContext);
                 }
 
-                return this.pessoaEnderecoRepository;
+                return this.pessoaEnderecos;
             }
+
+            private set { }
         }
 
-        public IPessoaContatoRepository PessoaContatoRepository
+        public IPessoaContatoRepository PessoaContatos
         {
             get
             {
-                if (this.pessoaContatoRepository == null)
+                if (this.pessoaContatos == null)
                 {
-                    this.pessoaContatoRepository = new PessoaContatoRepository(this._dbContext);
+                    this.pessoaContatos = new PessoaContatoRepository(this._dbContext);
                 }
 
-                return this.pessoaContatoRepository;
+                return this.pessoaContatos;
             }
+
+            private set { }
         }
 
         #endregion
