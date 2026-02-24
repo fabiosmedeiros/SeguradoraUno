@@ -1,11 +1,12 @@
-﻿using SeguradoraUno.Domain.Entities;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using SeguradoraUno.Domain.Entities;
 using SeguradoraUno.Repo.EntityConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SeguradoraUno.Repo.Persistence
 {
-    public class SuDbContext : DbContext
+    public class SuDbContext : IdentityDbContext
     {
         #region "DbSets"
                 
